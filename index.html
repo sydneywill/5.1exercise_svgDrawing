@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Fabric</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.png">
+</head>
+
+<body>
+    <div class="background-text">ALYA</div>
+
+    <svg width="800" height="800" xmlns="http://www.w3.org/2000/svg" class="pattern">
+        <defs>
+            <!-- EFFECTS -->
+            <filter id="glassEffect">
+
+                <!-- BLUR -->
+                <feGaussianBlur in="SourceGraphic" stdDeviation="2.8 .3" result="blur" />
+
+                <!-- TURBULANCE -->
+                <feTurbulence type="fractalNoise" baseFrequency=".02" numOctaves="30" result="turbulence" />
+                <feDisplacementMap in="blur" in2="turbulence" scale="28" />
+            </filter>
+
+            <!-- PATTERN REPEAT -->
+            <pattern id="organicPattern" x="0" y="0" width="200" height="200" patternUnits="userSpaceOnUse">
+                <rect x="0" y="0" width="200" height="200" fill="none" />
+
+                <!-- PATTERN ELEMENTS -->
+                <g fill="none">
+                    <ellipse cx="50" cy="50" rx="80" ry="40" stroke="black" stroke-width="0.5" />
+                    <ellipse cx="150" cy="50" rx="60" ry="90" stroke="black" stroke-width="1" />
+                    <ellipse cx="100" cy="100" rx="120" ry="60" stroke="black" stroke-width="0.8" />
+                    <ellipse cx="50" cy="150" rx="70" ry="50" stroke="black" stroke-width="0.3" />
+                    <ellipse cx="150" cy="150" rx="50" ry="100" stroke="black" stroke-width="1.2" />
+
+                    <circle cx="50" cy="50" r="30" stroke="#614051" stroke-width="0.7" />
+                    <circle cx="150" cy="50" r="40" stroke="black" stroke-width="1.5" />
+                    <circle cx="100" cy="100" r="70" stroke="#614051" stroke-width="0.9" />
+                    <circle cx="50" cy="150" r="40" stroke="#614051" stroke-width="0.6" />
+                    <circle cx="150" cy="150" r="50" stroke="black" stroke-width="1.1" />
+
+                    <line x1="0" y1="0" x2="200" y2="200" stroke="black" stroke-width="0.5" />
+                    <line x1="200" y1="0" x2="0" y2="200" stroke="black" stroke-width="0.5" />
+                    <line x1="100" y1="0" x2="100" y2="200" stroke="black" stroke-width="0.4" />
+                    <line x1="0" y1="100" x2="200" y2="100" stroke="black" stroke-width="0.6" />
+                </g>
+                <g fill="black">
+                    <circle cx="50" cy="50" r="1" />
+                    <circle cx="150" cy="50" r="1" />
+                    <circle cx="100" cy="100" r="1" />
+                    <circle cx="50" cy="150" r="1" />
+                    <circle cx="150" cy="150" r="1" />
+                </g>
+            </pattern>
+        </defs>
+        <rect width="800" height="800" fill="url(#organicPattern)" />
+    </svg>
+
+</body>
+
+</html>
